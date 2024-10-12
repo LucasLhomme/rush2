@@ -7,5 +7,18 @@
 
 int my_put_nbr(int nb)
 {
-    return (0);
+    int beginning = nb / 10;
+    int end = nb % 10;
+
+    if (nb < 0) {
+        my_putchar('-');
+        if (nb < - 2147483647 + 1) {
+            my_put_nbr(- beginning);
+            return my_put_nbr(- end);
+        }
+        return my_put_nbr(- nb);
+    }
+    if (beginning != 0)
+        my_put_nbr(beginning);
+        my_putchar(end + '0');
 }
