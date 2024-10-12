@@ -8,6 +8,20 @@
 #include "include/my.h"
 #include <unistd.h>
 
+void my_print_percent(float percent)
+{
+    int ent = percent;
+    int dec  = (percent - ent) * 100;
+
+    write(2, " ", 1);
+    write(2, "(", 1);
+    my_put_nbr(ent);
+    my_putchar('.');
+    my_put_nbr(dec);
+    write(2, "%", 1);
+    write(2, ")", 1);
+}
+
 char my_tolower(char str)
 {
     if (str >= 65 && str <= 90) {
@@ -16,10 +30,12 @@ char my_tolower(char str)
     return str;
 }
 
-static int occ_letters(char *str, char letter)
+static void occ_letters(char *str, char letter)
 {
     int ind = 0;
     int occ = 0;
+    float percent = 0.0;
+    int val_tot = my_strlen(str);
 
     while (str[ind] != '\0') {
         if (my_tolower(str[ind]) == my_tolower(letter)) {
@@ -30,6 +46,8 @@ static int occ_letters(char *str, char letter)
     my_putchar(letter);
     write(2, ":", 1);
     my_put_nbr(occ);
+    percent = (val_tot / occ) * 100;
+    my_print_percent(percent);
 }
 
 int main(int argc, char **argv)
