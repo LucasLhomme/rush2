@@ -36,7 +36,7 @@ int main (int argc, char **argv)
     if (argc != 3) {
         return 84;
     } else {
-        occ_letters(argv[1], argv[2]);
+        occ_letters(argv[1], argv[2][0]);
         return 0;
     }
 }
