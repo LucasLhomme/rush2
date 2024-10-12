@@ -20,6 +20,7 @@ static int occ_letters(char *str, char letter)
 {
     int ind = 0;
     int occ = 0;
+
     while (str[ind] != '\0') {
         if (my_tolower(str[ind]) == my_tolower(letter)) {
                 occ++;
@@ -31,12 +32,14 @@ static int occ_letters(char *str, char letter)
     my_put_nbr(occ);
 }
 
-int main (int argc, char **argv)
+int main(int argc, char **argv)
 {
-    if (argc != 3) {
-        return 84;
-    } else {
-        occ_letters(argv[1], argv[2][0]);
-        return 0;
+    for (int i = 2; i < argc; i++) {
+        if (my_strlen(argv[i]) > 1) {
+            return 84;
+        }
+        occ_letters(argv[1], argv[i][0]);
+        my_putchar('\n');
     }
+    return 0;
 }
