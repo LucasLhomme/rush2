@@ -10,8 +10,8 @@
 
 void my_print_percent(float percent)
 {
-    int ent = percent;
-    int dec  = (percent - ent) * 100;
+    int ent = (int)percent;
+    int dec = (int)(percent * 100) - (ent * 100);
 
     write(2, " ", 1);
     write(2, "(", 1);
@@ -46,7 +46,7 @@ static void occ_letters(char *str, char letter)
     my_putchar(letter);
     write(2, ":", 1);
     my_put_nbr(occ);
-    percent = (val_tot / occ) * 100;
+    percent = (occ * 100) / val_tot;
     my_print_percent(percent);
 }
 
