@@ -53,7 +53,7 @@ static void occ_letters(char *str, char letter)
 int main(int argc, char **argv)
 {
     for (int i = 2; i < argc; i++) {
-        if (my_strlen(argv[i]) > 1) {
+        if (my_strlen(argv[i]) >= 1) {
             return 84;
         }
         occ_letters(argv[1], argv[i][0]);
