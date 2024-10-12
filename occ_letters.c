@@ -13,13 +13,13 @@ void my_print_percent(float percent)
     int ent = (int)percent;
     int dec = (int)(percent * 100) - (ent * 100);
 
-    write(2, " ", 1);
-    write(2, "(", 1);
+    write(1, " ", 1);
+    write(1, "(", 1);
     my_put_nbr(ent);
     my_putchar('.');
     my_put_nbr(dec);
-    write(2, "%", 1);
-    write(2, ")", 1);
+    write(1, "%", 1);
+    write(1, ")", 1);
 }
 
 char my_tolower(char str)
@@ -44,7 +44,7 @@ static void occ_letters(char *str, char letter)
         ind++;
     }
     my_putchar(letter);
-    write(2, ":", 1);
+    write(1, ":", 1);
     my_put_nbr(occ);
     percent = (occ * 100) / val_tot;
     my_print_percent(percent);
