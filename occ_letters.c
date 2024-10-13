@@ -46,14 +46,14 @@ static void occ_letters(char *str, char letter)
     my_putchar(letter);
     write(1, ":", 1);
     my_put_nbr(occ);
-    percent = ((float)occ   * 100) / (float)val_tot;
+    percent = ((float) occ * 100) / (float)val_tot;
     my_print_percent(percent);
 }
 
 int main(int argc, char **argv)
 {
     for (int i = 2; i < argc; i++) {
-        if (my_strlen(argv[i]) >= 1) {
+        if (my_strlen(argv[i]) >= 3) {
             return 84;
         }
         occ_letters(argv[1], argv[i][0]);
