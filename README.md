@@ -1,15 +1,21 @@
-# Rush 2 — Language Frequency Detection
+# 🌐 Rush 2 — Natural Language Detection via Letter Frequency
 
-> **Natural language prediction via letter frequency cryptanalysis in C.**
+[![Language: C](https://img.shields.io/badge/Language-C-00599C.svg)](https://en.wikipedia.org/wiki/C_(programming_language))
+[![Module: B-CPE-100](https://img.shields.io/badge/Epitech-B--CPE--100-blue.svg)](https://www.epitech.eu/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
-## Overview
-Analyzes character occurrences in a provided string and calculates letter frequency distributions to statistically determine whether the text is written in English, French, German, or Spanish.
+> **Rush 2 statistically determines the language of a given text** (English, French, German, or Spanish) by computing character occurrences against natural language frequency profiles.
 
-## Build & Usage
-```bash
-make
-./rush2 "The quick brown fox jumps over the lazy dog" e t a
-```
+---
 
-## License
-Open-source under MIT License.
+## 🧠 Detection Algorithm
+
+1. **Occurrences Counter:** Counts targeted letters case-insensitively across the input string.
+2. **Frequency Distribution:** Normalizes counts against total alphabetic characters to compute observed frequency percentages.
+3. **Statistical Distance:** Computes squared error deviation against standard linguistic corpora to identify the closest language match.
+
+---
+
+## 📜 License
+
+Licensed under the **MIT License with attribution** to Lucas Lhomme (Crabe).
